@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Cotización - Bandas Modulares</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <img src="images.png" alt="Logo Empresa" class="header-logo">
+    <h1 style="margin-top: 0px;">Solicitud de Cotización</h1>
+
+    <form>
+        <div class="section">
+            
+            <h3>1. Información del Cliente</h3>
+
+            <label>Tipo de Cliente</label>
+            <div class="radio-group">
+                <label class="radio-item">
+                    <input type="radio" name="tipo_cliente" value="persona" checked>
+                    Persona
+                </label>
+
+                <label class="radio-item">
+                    <input type="radio" name="tipo_cliente" value="empresa">
+                    Empresa
+                </label>
+            </div>
+
+            <div id="empresa-field" style="display: none;">
+                <label>Nombre de la Empresa</label>
+                <input type="text" name="empresa">
+            </div>
+
+            <label>Nombre del Contacto</label>
+            <input type="text" name="contacto" required>
+
+            <label>Correo Electrónico</label>
+            <input type="email" name="email" required>
+
+            <label>Teléfono/Celular</label>
+            <input type="tel" name="telefono" required>
+        </div>
+
+        <div class="section">
+            <h3>2. Tipo de Banda Requerida</h3>
+
+            <label>Referencia</label>
+            <select name="material" required>
+                    <option value="">Seleccione...</option>
+                    <option>TP-BPEF-1X6B</option>
+                    <option>TP-BL-PPCOP-1X6B</option>
+                    <option>TP-BL-PPCOP-0.5X6.04W</option>
+                    <option>TP-BLA-PPCOP-1X6B</option>
+                    <option>TP-ESLAB_INOX316-P2</option>
+                    <option>No estoy seguro (asesoría requerida)</option>
+            </select>
+
+            <label class="small-note">
+                ¿No conoce la referencia? 
+                <a href="catalogo.html" target="_blank">Conozca nuestras bandas aquí</a>.
+            </label>
+
+            <label>Material</label>
+            <select name="material" required>
+                    <option value="">Seleccione...</option>
+                    <option>Acero Inoxidable 316</option>
+                    <option>PP Alta Densidad</option>
+                    <option>PP COP Baja Densidad</option>
+                    <option>No estoy seguro (asesoría requerida)</option>
+            </select>
+
+            <label>Superficie</label>
+            <select name="superficie" required>
+                <option value="">Seleccione...</option>
+                <option>Liso</option>
+                <option>Área Abierta</option>
+                <option>Con Aleta (Vuelo)</option>
+                <option>No estoy seguro (asesoría requerida)</option>
+            </select>
+
+            <label>Altura de Aleta (si aplica)</label>
+            <input type="number" name="altura_aleta" placeholder="mm">
+
+            <label class="small-note">
+                Si no conoce estos datos, podemos asesorarlo.
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>3. Dimensiones del Transportador</h3>
+
+            <label>Ancho requerido (mm o pulgadas)</label>
+            <input type="text" name="ancho" placeholder="mm o pulgadas" required >
+
+            <label>Longitud total del transportador (m)</label>
+            <input type="number" step="0.01" name="longitud" placeholder="m">
+
+            <label>Inclinación</label>
+            <select name="inclinacion" required>
+                <option value="">Seleccione...</option>
+                <option>Horizontal</option>
+                <option>Inclinado</option>
+                <option>Declinado</option>
+                <option>No estoy seguro (asesoría requerida)</option>
+            </select>
+
+            <label class="small-note">
+                Si no conoce estos datos, podemos asesorarlo.
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>4. Condiciones de Operación</h3>
+
+            <label>Temperatura de operación (°C)</label>
+            <input type="number" name="temperatura" placeholder="°C">
+
+            <label>Carga aproximada sobre la banda (kg)</label>
+            <input type="number" name="carga" placeholder="kg">
+
+            <label>Ambiente de operación</label>
+            <div class="checkbox-grid">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="seco" name="ambiente[]" value="seco">
+                    <label for="seco">Seco</label>
+                </div>
+
+                <div class="checkbox-item">
+                    <input type="checkbox" id="humedo" name="ambiente[]" value="humedo">
+                    <label for="humedo">Húmedo</label>
+                </div>
+
+                <div class="checkbox-item">
+                    <input type="checkbox" id="lavado" name="ambiente[]" value="lavado">
+                    <label for="lavado">Lavado frecuente</label>
+                </div>
+
+                <div class="checkbox-item">
+                    <input type="checkbox" id="quimico" name="ambiente[]" value="quimico">
+                    <label for="quimico">Ambiente químico</label>
+                </div>
+
+                <div class="checkbox-item">
+                    <input type="checkbox" id="refrigeracion" name="ambiente[]" value="refrigeracion">
+                    <label for="refrigeracion">Refrigeración / Congelación</label>
+                </div>
+            </div>
+
+            <label class="small-note" style="margin-top: 15px;">
+                Si no conoce estos datos, podemos asesorarlo.
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>5. Sistema de Accionamiento</h3>
+
+            <label>Diámetro del piñón motriz (mm)</label>
+            <input type="number" name="diametro_pinon">
+
+            <label>Diámetro rodillos de apoyo (mm)</label>
+            <input type="number" name="diametro_rodillo">
+
+            <label>Tensionamiento</label>
+            <select name="tensionamiento">
+                <option value="">Seleccione...</option>
+                <option>Tornillo</option>
+                <option>Por gravedad</option>
+                <option>No definido</option>
+            </select>
+
+            <label class="small-note">
+                Si no conoce estos datos, podemos asesorarlo.
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>6. Información Adicional</h3>
+
+            <label>Comentarios adicionales</label>
+            <textarea name="comentarios" rows="4"></textarea>
+            <label class="small-note">
+                Puede incluir aquí información adicional sobre el proceso o requerimientos específicos de la aplicación.
+            </label>
+        </div>
+
+        <button type="submit">Enviar Solicitud</button>
+    </form>
+</div>
+
+<script>
+    document.querySelectorAll('input[name="tipo_cliente"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const empresaField = document.getElementById('empresa-field');
+            if (this.value === 'empresa') {
+                empresaField.style.display = 'block';
+            } else {
+                empresaField.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
